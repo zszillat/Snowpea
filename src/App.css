@@ -7,5 +7,47 @@
 
 * {
   color: white;
-  background-color: grey;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+}
+
+.recipe-list {
+  width: 80%;
+  background-color: rgb(30, 30, 30);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto 0 auto;
+}
+
+.recipe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  background-color: rgb(39, 39, 44);
+  padding: 5px;
+}
+
+ul {
+  width: 200px;
+}
+
+.recipe-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input, textarea {
+  background-color: rgb(68, 68, 68);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

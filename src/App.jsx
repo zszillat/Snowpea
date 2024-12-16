@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css'
-import RecipeList from './components/RecipeList'
-import RecipeDetails from './components/RecipeDetails';
+import RecipeList from './components/view_recipes/RecipeList'
+import RecipeDetails from './components/recipe_details/RecipeDetails';
 import Login from './components/Login';
-import AddRecipe from './components/AddRecipe';
+import AddRecipe from './components/add_recipe/AddRecipe';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/recipe" element={<RecipeDetails id={recipeID}/>}/> 
           <Route path="/add" element={<AddRecipe id={recipeID}/>}/>
+          <Route path="/" element={<RecipeList id={recipeID}/>}/>
         </Routes>
       </>
     )
