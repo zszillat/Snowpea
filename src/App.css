@@ -1,53 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 * {
-  color: white;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", serif;
 }
 
 body {
+  color: white;
+  width: 100%;
   background-color: rgb(20, 20, 20);
 }
 
-.recipe-list {
-  width: 80%;
-  background-color: rgb(30, 30, 30);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 0 auto 0 auto;
+#root {
+  font-weight: 300;
+  width: 100%;
+  margin: 0 0;
+  max-width: 1400px;
+  background-color: rgb(49, 49, 49);
 }
 
-.recipe {
+.topbar {
+  width: 100%;
+  background-color: rgb(20, 20, 20);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 90%;
-  background-color: rgb(39, 39, 44);
-  padding: 5px;
+  height: 50px;
 }
 
-ul {
-  width: 200px;
+.topbar h1 {
+  font-size: 25px;
 }
 
-.recipe-details {
+.topbar > div {
+  width: 33%;
+}
+
+.titlebar {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-input, textarea {
-  background-color: rgb(68, 68, 68);
+.plus-icon {
+  display: flex;
+  justify-content: end;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.topbar > div > img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.recipe-item {
+  width: 100%;
+  padding: 12px;
+}
+
+.recipe-item:nth-child(even) {
+  background-color:rgb(61, 61, 61);
+}
+
+.recipe-item > h1 {
+  font-size: 25px;
+}
+
+.recipe-item > p {
+  margin-top: 2px;
 }

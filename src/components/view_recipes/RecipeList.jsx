@@ -48,24 +48,22 @@ const RecipeList = () => {
   // Render the list of recipes
   return (
     <>
-      {/* Button to navigate to Add Recipe page */}
-      <button onClick={handleAddRecipe}>Add Recipe</button>
-
-      <h1>Recipes</h1>
+      <div className="topbar">
+        <div></div>
+        <div className='titlebar'><h1>Recipes</h1></div>
+        <div className='plus-icon'><img onClick={handleAddRecipe} src="/src/images/plus.svg" alt="plus icon" /></div>
+      </div>
 
       {/* Recipe list container */}
       <div className="recipe-list">
         {recipes.map((recipe) => (
           <div onClick={() => handleNavigate(recipe)} key={recipe.id} className="recipe-item">
-            {/* Render individual recipe */}
             <Recipe
               id={recipe.id}
               title={recipe.title}
               prepTime={recipe.prep_time}
               cookTime={recipe.cook_time}
             />
-
-            {/* Button to view recipe details */}
           </div>
         ))}
       </div>
