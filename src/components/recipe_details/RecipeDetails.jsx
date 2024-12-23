@@ -1,38 +1,70 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { deleteRecipe } from '../../dbh';
+import { useState } from 'react';
+
+const loggedInUserID = import.meta.env.VITEUSER_ID;
 
 function RecipeDetails({ id }) {
-    return (
-      <div className="recipe-details">
-        <h1>Easy Chicken Scampi Recipe</h1>
-        <p>Recipe ID: {id}</p>
-        <p>Prep-Time: 20 minutes</p>
-        <p>Cook Time: 10 minutes</p>
+    const [documents, setDocuments] = useState([]);
+    const navigate = useNavigate();
+    const location = useLocation();
+    let r = location.state;
 
-        ---
+    if (!r) {
+        return <p>No recipe data found.</p>;
+    }
+
+    const ingredients = r.ingredients.split("\n");
+    const instructions = r.instructions.split("\n");
+
+    const handleNavigate = (r) => {
+        navigate('/add', { state: r });
+    };
+
+    const handleDelete = async (id) => {
+      try {
+        const result = await deleteRecipe(id);
+        setDocuments((prev) => prev.filter((doc) => doc.$id !== id));
+        if (result) {
+          navigate("/")
+        }
+      } catch (error) {
+        console.error('Failed to delete document:', error);
+      }
+    };
+    
+    return (
+      <>
+      <button onClick={() => navigate("/")}>back</button>
+      <section className="recipe-details">
+        <button onClick={() => handleNavigate(r)}>EDIT</button>
+        <h1>{r.title}</h1>
+        <p>Recipe ID: {r.$id}</p>
+        <p>Prep Time: {r.prep_time} minutes</p>
+        <p>Cook Time: {r.cook_time} minutes</p>
+
+        <hr />
 
         <h5>Ingredients</h5>
         <ul>
-          <li>"Angel Hair Pasta":"1 lbs"</li>
-          <li>"Chicken Tenderloins":"4 Breasts Thinly Sliced"</li>
-          <li>"All-Purpose Flour":"2 Cups",</li>
-          <li>"Italian Seasoning":"1 tsp",</li>
-          <li>"Salt":"1 Pinch",</li>
-          <li>"Pepper":"1 Pinch",</li>
-          <li>"Garlic":"1 Clove"</li>
-          <li>"Red Onion":"1/2",</li>
+            {ingredients.map((i, index) => (
+                <li key={index}>{i}</li>
+            ))}
         </ul>
 
-        ---
+        <hr />
 
         <h5>Instructions</h5>
         <ul>
-          <li>"AIn a medium-sized saucepot, boil water and salt it. Add your pasta, and cook according to the package instructions. When the pasta is cooked, reserve 1 cup of the pasta water and drain the pasta.</li>
-          <li>"Chicken Tenderloins":"4 Breasts Thinly Sliced"</li>
-
+            {instructions.map((i, index) => (
+                <li key={index}>{i}</li>
+            ))}
         </ul>
-      </div>
+        <button onClick={() => handleDelete(r.$id)}>|||DELETE|||</button>
+      </section>
+      </>
     );
-  }
-  
-  export default RecipeDetails;
-  
+}
+
+export default RecipeDetails;

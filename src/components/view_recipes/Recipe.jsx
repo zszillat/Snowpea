@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function Recipe({ id, title, prepTime, cookTime }) {
+
   return (
     <div className="recipe">
         <p>{title}</p>
