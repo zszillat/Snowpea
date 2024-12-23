@@ -36,9 +36,17 @@ function RecipeDetails({ id }) {
     
     return (
       <>
-      <button onClick={() => navigate("/")}>back</button>
+
+      <div className="topbar">
+        <div className='left'><img src="/src/images/left-arrow.svg" alt="Back Button" onClick={() => navigate("/")} className="icon" /></div>
+        <div className='titlebar'><h1>Snowpea</h1></div>
+        <div className='plus-icon'>
+          <img onClick={() => handleDelete(r.$id)} src="/src/images/trash.svg" alt="delete button" className="icon"/>
+          <img onClick={() => handleNavigate(r)} src="/src/images/pencil.svg" alt="edit button" className="icon"/>
+        </div>
+      </div>
+      
       <section className="recipe-details">
-        <button onClick={() => handleNavigate(r)}>EDIT</button>
         <h1>{r.title}</h1>
         <p>Recipe ID: {r.$id}</p>
         <p>Prep Time: {r.prep_time} minutes</p>
@@ -61,7 +69,6 @@ function RecipeDetails({ id }) {
                 <li key={index}>{i}</li>
             ))}
         </ul>
-        <button onClick={() => handleDelete(r.$id)}>|||DELETE|||</button>
       </section>
       </>
     );

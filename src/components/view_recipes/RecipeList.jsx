@@ -50,7 +50,7 @@ const RecipeList = () => {
     <>
       <div className="topbar">
         <div></div>
-        <div className='titlebar'><h1>Recipes</h1></div>
+        <div className='titlebar'><h1>Snowpea</h1></div>
         <div className='plus-icon'><img onClick={handleAddRecipe} src="/src/images/plus.svg" alt="plus icon" /></div>
       </div>
 

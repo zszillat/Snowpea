@@ -18,12 +18,23 @@ body {
   background-color: rgb(49, 49, 49);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+form > * {
+  margin: 3px;
+}
+
 .topbar {
   width: 100%;
   background-color: rgb(20, 20, 20);
   display: flex;
   justify-content: space-between;
   height: 50px;
+  margin-bottom: 5px;
 }
 
 .topbar h1 {
@@ -45,9 +56,19 @@ body {
   justify-content: end;
 }
 
+.left {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.left > img {
+  padding-left: 5px;
+}
+
 .topbar > div > img {
   width: 30px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .recipe-item {

@@ -75,7 +75,11 @@ function AddRecipe() {
 
   return (
     <>
-    <button onClick={() => navigate("/")}>back</button>
+      <div className="topbar">
+        <div className='left'><img src="/src/images/left-arrow.svg" alt="Back Button" onClick={() => navigate("/")} className="icon" /></div>
+        <div className='titlebar'><h1>Snowpea</h1></div>
+        <div className='plus-icon'><img src="/src/images/check.svg" alt="" className="icon" /></div>
+      </div>
     <form onSubmit={handleSubmit} className="add-recipe">
       <label htmlFor="title">Title</label>
       <input
