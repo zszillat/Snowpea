@@ -1,8 +1,23 @@
-# React + Vite
+# Snowpea
+## Digital Recipe Book Web Application
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Minimum Viable Product To-Do List
+- ~~~Create Initial ReactJS Project~~~
+    - ~~~Install Appwrite~~~
+    - ~~~Create Routes and Components~~~
+- ~~~Setup CRUD~~~
+    - ~~~Setup Appwrite Project~~~
+    - ~~~Create Database Schema (Recipe and GoogleAccounts Table)~~~
+    - ~~~Create CRUD Operations (FetchRecipe, CreateRecipe, UpdateRecipe, DeleteRecipe)~~~
+- Authentication
+    - Setup OAuth for Google
+    - Create row in GoogleAccount table upon first login
+    - Check that user is properly logged in on every page
+    - add verification so users can only view, edit and delete their own recipes
+- Polish
+    - Add Basic CSS
+    - Form Verification
+    - Find Domain
+    - Deploy to Server
+    - Error Handling
