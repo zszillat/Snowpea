@@ -1,18 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import fs from 'fs';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    host: '192.168.86.126',
-    port: 80,
-    strictPort: true,
+    host: '0.0.0.0',
+    port: 8443,
+    https: {
+      key: fs.readFileSync('/etc/letsencrypt/live/snowpea.site/privkey.pem'),
+      cert: fs.readFileSync('/etc/letsencrypt/live/snowpea.site/fullchain.pem'),
+    },
   },
   plugins: [react()],
-  define: {
-    'process.env': JSON.stringify(process.env),  // Polyfill for environment variables
-  },
-  optimizeDeps: {
-    include: ['process'],  // Include the process polyfill in optimized dependencies
-  },
 });
