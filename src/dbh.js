@@ -7,9 +7,11 @@ const collectionId = import.meta.env.VITE_COLLECTION_RECIPE_ID
 // Fetch all documents
 export const fetchRecipes = async (userID) => {
     try {
-        const response = await databases.listDocuments(databaseId, collectionId, [
-            Query.equal('googleAccount', userID)
-        ]);
+        const response = await databases.listDocuments(databaseId, collectionId, 
+            [ Query.equal('googleAccount', userID) ]
+        );
+
+        // const response = await databases.listDocuments(databaseId, collectionId);
         return response.documents;
     } catch (error) {
         console.error('Error fetching recipes: ', error);

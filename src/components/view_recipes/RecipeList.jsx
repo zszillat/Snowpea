@@ -50,8 +50,8 @@ const RecipeList = () => {
     <>
       <div className="topbar">
         <div></div>
-        <div className='titlebar'><h1>Snowpea</h1></div>
-        <div className='plus-icon'><img onClick={handleAddRecipe} src="/src/images/plus.svg" alt="plus icon" /></div>
+        <div className='titlebar '><h1 className='non-interactive'>Snowpea</h1></div>
+        <div className='plus-icon'><img onClick={handleAddRecipe} src="/src/images/plus.svg" alt="plus icon" className='non-interactive'/></div>
       </div>
 
       {/* Recipe list container */}
