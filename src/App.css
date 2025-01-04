@@ -4,6 +4,10 @@
     font-family: "Roboto", serif;
 }
 
+body {
+    background-color: rgb(48, 48, 48);
+}
+
 h1 {
     font-weight: 300;
     font-size: 2rem;
