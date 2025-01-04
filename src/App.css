@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: "Roboto", serif;
+    color: white
 }
 
 body {
@@ -23,3 +24,18 @@ nav  {
     align-items: center;
     color: white;
 }
+
+/* Recipe List */
+.recipe-list {
+    background-color: rgba(255, 255, 255, 0.103);
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe {
+    background-color: rgb(214, 214, 214);
+    margin: 3px 0;
+    padding: 10px 20px;
+    height: 70px;
+}
+

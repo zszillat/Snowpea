@@ -16,7 +16,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user != null) {
-      navigate('/account')
+      navigate('/recipes')
     }
   }, [user]);
 
